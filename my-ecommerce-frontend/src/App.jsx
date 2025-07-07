@@ -1,11 +1,12 @@
 // src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider, useAuth } from './context/AuthContext'; // Import AuthProvider and useAuth
+import { AuthProvider, useAuth } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Register from './components/Register';
 import ProductList from './components/ProductList';
+import CartPage from './components/CartPage'; // <--- NEW: Import CartPage
 
 // A simple PrivateRoute component
 const PrivateRoute = ({ children }) => {
@@ -23,7 +24,7 @@ function AppContent() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/products" element={<PrivateRoute><ProductList /></PrivateRoute>} />
-        {/* Add more routes here as needed, e.g., for admin dashboard, cart, orders */}
+        <Route path="/cart" element={<PrivateRoute><CartPage /></PrivateRoute>} /> {/* <--- NEW: Route for CartPage */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
@@ -51,7 +52,7 @@ function NotFound() {
 function App() {
   return (
     <Router>
-      <AuthProvider> {/* Wrap AppContent with AuthProvider */}
+      <AuthProvider>
         <AppContent />
       </AuthProvider>
     </Router>
