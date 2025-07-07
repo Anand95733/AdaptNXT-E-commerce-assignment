@@ -1,7 +1,9 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const app = express();
+
 const PORT = process.env.PORT || 3000;
 
 // Import routes
@@ -12,7 +14,7 @@ const orderRoutes = require('./routes/orderRoutes'); // NEW
 
 // Middleware
 app.use(express.json());
-
+app.use(cors());
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('MongoDB Connected Successfully!'))

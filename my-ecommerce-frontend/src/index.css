@@ -1,0 +1,84 @@
+/* src/index.css */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1a1a1a; /* Very dark background */
+  color: #e0e0e0; /* Light grey text */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 30px;
+  background-color: #2a2a2a; /* Slightly lighter dark for container */
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+h1, h2, h3 {
+  color: #61dafb; /* React blue for headings */
+}
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.2s ease-in-out;
+}
+button:hover {
+  background-color: #0056b3;
+}
+input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #333;
+  color: #e0e0e0;
+  width: calc(100% - 22px); /* Account for padding+border */
+}
+input::placeholder {
+  color: #bbb;
+}
+.error-message {
+  color: #ff6b6b;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+}
+.success-message {
+  color: #98fb98;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+}
+.nav-bar {
+  background-color: #333;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #444;
+}
+.nav-bar a {
+  color: #61dafb;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+}
+.nav-bar a:hover {
+  color: #98fb98;
+}
+.nav-bar span {
+  color: #bbb;
+  margin-left: 20px;
+}
